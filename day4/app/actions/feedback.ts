@@ -1,5 +1,7 @@
 "use server";
 
+import { revalidatePath } from "next/cache";
+
 let feedbacks: any[] = [];
 
 export async function submitFeedback(formData: FormData) {
@@ -9,6 +11,9 @@ export async function submitFeedback(formData: FormData) {
 
   const newFeedback = { name, message, rating };
   feedbacks.push(newFeedback);
+
+  // 🔥 THIS IS IMPORTANT
+  revalidatePath("/");
 
   return { success: true };
 }
