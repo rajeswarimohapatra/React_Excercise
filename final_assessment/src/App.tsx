@@ -5,6 +5,7 @@ import { WebStorageStateStore } from 'oidc-client-ts';
 import Layout from './components/Layout';
 import Login from './pages/Login';
 import Callback from './pages/Callback';
+import AuthentikLogin from './pages/AuthentikLogin';
 
 import Dashboard from './pages/Dashboard';
 import UserFetch from './pages/UserFetch';
@@ -41,6 +42,7 @@ function AppRoutes() {
   return (
     <Routes>
       <Route path="/login" element={<Login />} />
+      <Route path="/authentik-login" element={<AuthentikLogin />} />
       <Route path="/callback" element={<Callback />} />
       <Route path="/sso/logout" element={<Navigate to="/login" replace />} />
       

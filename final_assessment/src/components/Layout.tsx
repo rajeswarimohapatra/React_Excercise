@@ -5,7 +5,8 @@ import { Bell, User, LogOut } from 'lucide-react';
 import { useAuth } from 'react-oidc-context';
 import { useAuthData } from '../context/AuthDataContext';
 import axios from 'axios';
-import female from '../assets/female.png'
+import female from '../assets/female.png';
+import menuFoldIcon from '../assets/MenuFold.png';
 
 export default function Layout() {
   const auth = useAuth();
@@ -84,9 +85,7 @@ export default function Layout() {
       padding: '6px'
     }}
   >
-    <svg width="22" height="22" viewBox="0 0 24 24">
-      <path d="M3 6h18M3 12h18M3 18h18" stroke="#333" strokeWidth="2" strokeLinecap="round"/>
-    </svg>
+    <img src={menuFoldIcon} alt="Menu" width="22" height="22" />
   </button>
 
 </div>

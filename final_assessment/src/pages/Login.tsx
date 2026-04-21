@@ -1,15 +1,16 @@
 import React from 'react';
 import { useAuth } from 'react-oidc-context';
+import { useNavigate } from 'react-router-dom';
+import FrameImg from '../assets/Frame.png';
 
 export default function Login() {
   const auth = useAuth();
+  const navigate = useNavigate();
 
   return (
     <div className="auth-container">
       <div className="auth-left">
-        <h1 style={{color: 'white', fontSize: '2.5rem', fontWeight: 700, padding: '2rem', textAlign: 'center'}}>
-          Welcome to CBOI<br/>Merchant Portal
-        </h1>
+        <img src={FrameImg} alt="Frame" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
       </div>
       <div className="auth-right">
         <div className="auth-card">
@@ -19,7 +20,7 @@ export default function Login() {
           <button 
             className="btn btn-primary" 
             style={{width: '100%', padding: '1rem', fontSize: '1rem'}}
-            onClick={() => void auth.signinRedirect()}
+            onClick={() => navigate('/authentik-login')}
           >
             Sign In with Authentik
           </button>
